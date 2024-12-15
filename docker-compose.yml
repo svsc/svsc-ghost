@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  ghost:
+    image: ghost:latest
+    ports:
+      - "2368:2368"
+    environment:
+      # Basic Ghost configuration
+      - url=http://localhost:2368
+      # Explicitly set SQLite as database
+      - database__client=sqlite3
+      - database__connection__filename=/var/lib/ghost/content/data/ghost.db
+    volumes:
+      - ghost-content:/var/lib/ghost/content
+    restart: unless-stopped
+
+volumes:
+  ghost-content:
