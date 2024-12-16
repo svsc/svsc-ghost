@@ -7,6 +7,8 @@ FROM ghost:latest
 # Switch to non-root user
 #USER node
 
+COPY config.production.json /var/lib/ghost/config.production.json
+
 # Expose the Ghost port
 EXPOSE 2368:80
 
