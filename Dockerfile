@@ -5,9 +5,9 @@ FROM ghost:latest
 #    chown node:node /var/lib/ghost/content
 
 # Switch to non-root user
-USER node
+#USER node
 
 # Expose the Ghost port
-EXPOSE 2368
+EXPOSE 2368:80
 
 # Use the default Ghost entrypoint and CMD
