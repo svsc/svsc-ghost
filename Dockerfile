@@ -1,9 +1,8 @@
 FROM ghost:latest
 
 # Create a directory for persistent storage that matches Dokku's mount point
-RUN ls -lsah /var/lib/ghost && whoami && \
-    mkdir -p /var/lib/ghost/content && \
-    chown node:node /var/lib/ghost/content
+#RUN mkdir -p /var/lib/ghost/content && \
+#    chown node:node /var/lib/ghost/content
 
 # Switch to non-root user
 USER node
