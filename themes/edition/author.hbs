@@ -48,9 +48,26 @@
     {{/author}}
 
     <div class="post-feed gh-feed gh-canvas">
+        {{#if @member.paid}}
+            {{#foreach posts visibility="all"}}
+                {{> "loop"}}
+            {{/foreach}}
+        {{else}}
+            {{#if @member}}
+                {{#foreach posts visibility="public,members"}}
+                    {{> "loop"}}
+                {{/foreach}}
+            {{else}}
+                {{#foreach posts visibility="public"}}
+                    {{> "loop"}}
+                {{/foreach}}
+            {{/if}}
+        {{/if}}
+{{!--
         {{#foreach posts}}
             {{> "loop"}}
         {{/foreach}}
+--}}
     </div>
 
     {{pagination}}
