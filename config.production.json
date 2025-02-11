@@ -4,8 +4,21 @@
     "port": 2368,
     "host": "::"
   },
+  // "mail": {
+  //   "transport": "Direct"
+  // },
   "mail": {
-    "transport": "Direct"
+    "transport": "SMTP",
+    "options": {
+      "service": "Mailgun",
+      "host": "smtp.eu.mailgun.org",
+      "port": 465,
+      "secure": true,
+      "auth": {
+        "user": "postmaster@sheffieldviking.org.uk",
+        "pass": "***REMOVED***"
+      }
+    }
   },
   "database": {
     "client": "sqlite3",
