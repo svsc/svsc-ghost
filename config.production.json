@@ -4,9 +4,6 @@
     "port": 2368,
     "host": "::"
   },
-  // "mail": {
-  //   "transport": "Direct"
-  // },
   "mail": {
     "transport": "SMTP",
     "options": {
